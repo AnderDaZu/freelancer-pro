@@ -46,3 +46,21 @@ la comprensión del usuario.
 
 ✔ Facilita la lectura y navegación.
 
+---
+
+# Preload
+
+Preload dentro de un <link> se usa para cargar recursos de manera anticipada y mejorar el rendimiento de la página 
+web. Es útil cuando se sabe que un recurso será necesario pronto, pero el navegador normalmente no lo cargaría de inmediato.
+
+## 📌 ¿Para qué sirve preload?
+
+- Optimizar la carga de la página: Permite cargar archivos antes de que se necesiten, reduciendo el tiempo de espera.
+- Evitar bloqueos en la renderización: Recursos críticos, como fuentes o scripts, se pueden cargar antes para evitar retrasos.
+- Mejorar la experiencia del usuario: Especialmente útil para imágenes grandes, videos, estilos CSS y fuentes web.
+
+## ⚠ Importante
+- No usar preload en exceso, solo en recursos críticos.
+- Asegurarse de que los archivos sean realmente necesarios; de lo contrario, puede desperdiciar ancho de banda.
+- Combinar preload con async y defer para optimizar scripts JavaScript.
+
