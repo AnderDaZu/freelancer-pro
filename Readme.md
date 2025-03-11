@@ -232,3 +232,16 @@ diseñar interfaces sin necesidad de escribir CSS personalizado.
 px-4 (padding horizontal), etc. en lugar de escribir CSS tradicional.
 
 💡 Ideal para proyectos rápidos y escalables
+
+---
+
+# Medidas de Media Queries
+
+| Dispositivo |	Tamaño (px) | Media Queries |
+|:------------|:-----------:|:-------------:|
+| 📱 Móvil pequeño | 320px - 480px | @media (max-width: 480px) { ... } |
+| 📱 Móvil mediano | 481px - 767px | @media (max-width: 767px) { ... } |
+| 📱 Móvil grande / Tablet pequeña | 768px - 1024px | @media (max-width: 1024px) { ... } |
+| 💻 Tablets y pantallas medianas | 1025px - 1280px | @media (max-width: 1280px) { ... } |
+| 🖥️ Escritorio estándar | 1281px - 1600px | @media (max-width: 1600px) { ... } |
+| 🖥️ Pantallas grandes | 1601px o más | @media (min-width: 1601px) { ... } |

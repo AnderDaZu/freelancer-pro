@@ -23,7 +23,25 @@
     </header>
 
     <div class="nav-bg">
-        <nav class="navegacion-principal contenedor">
+        <button class="nav__btn_display">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 3h16" />
+                <path d="M4 9h16" />
+                <path d="M4 15h16" />
+                <path d="M4 21h16" />
+            </svg>
+        </button>
+
+        <button class="nav__btn_close inactive">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="1.5">
+                <path d="M18 6l-12 12"></path>
+                <path d="M6 6l12 12"></path>
+            </svg>
+        </button>
+
+        <nav class="navegacion-principal contenedor inactive">
             <a href="#">Inicio</a>
             <a href="#">Sobre Mi</a>
             <a href="#">Clientes</a>
@@ -142,6 +160,28 @@
     <Footer>
         <p>Todos los derechos reservados, Anderson Dazu Freelancer 2025</p>
     </Footer>
+
+    <script>
+        const nav = document.querySelector(".navegacion-principal");
+        const navBtn = document.querySelector(".nav__btn_display");
+        const navClose = document.querySelector(".nav__btn_close");
+
+        navBtn.addEventListener("click", () => {
+            navBtn.classList.remove("active__block");
+            navBtn.classList.add("inactive");
+            navClose.classList.remove("inactive");
+            navClose.classList.add("active__block");
+            nav.classList.add("active__flex");
+        });
+
+        navClose.addEventListener("click", () => {
+            navClose.classList.remove("active__block");
+            navClose.classList.add("inactive");
+            navBtn.classList.remove("inactive");
+            navBtn.classList.add("active__block");
+            nav.classList.remove("active__flex");
+        });
+    </script>
 </body>
 
 </html>
