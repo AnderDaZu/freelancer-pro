@@ -173,3 +173,15 @@ los estilos sean más fáciles de gestionar".
 
     Usamos :root principalmente para definir variables CSS reutilizables en todo el documento y 
     garantizar que tengan una mayor prioridad que los estilos aplicados a html.
+
+---
+
+# Normalize
+
+Normalize.css se usa en los proyectos para:
+
+✅ Eliminar inconsistencias en los estilos predeterminados de los navegadores.
+✅ Hacer que los estilos sean más uniformes en distintos navegadores y dispositivos.
+✅ Mantener compatibilidad sin eliminar por completo los estilos nativos útiles.
+
+💡 En resumen: Ayuda a que tu sitio web se vea y funcione de manera más consistente en todos los navegadores. 🚀
