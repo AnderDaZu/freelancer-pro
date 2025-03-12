@@ -245,3 +245,42 @@ px-4 (padding horizontal), etc. en lugar de escribir CSS tradicional.
 | 💻 Tablets y pantallas medianas | 1025px - 1280px | @media (max-width: 1280px) { ... } |
 | 🖥️ Escritorio estándar | 1281px - 1600px | @media (max-width: 1600px) { ... } |
 | 🖥️ Pantallas grandes | 1601px o más | @media (min-width: 1601px) { ... } |
+
+---
+
+# Snipet para Ajustar Módelo Caja (Box Model)
+
+Este código se usa para controlar cómo se calculan los tamaños de los elementos en una página web. 
+Vamos a desglosarlo en partes:
+
+```css
+html {
+    box-sizing: border-box;
+}
+```
+
+👉 Aquí se establece que el elemento <html> (todo el documento) usará box-sizing: border-box;.
+
+🔍 ¿Qué significa esto?
+Cuando un elemento tiene box-sizing: border-box, su ancho y alto incluyen el padding y el borde.
+
+```css
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+```
+
+👉 Esto significa que todos los elementos y sus pseudoelementos (::before, ::after) heredarán la propiedad box-sizing del <html>.
+
+Como en <html> ya se definió box-sizing: border-box;, todos los elementos de la página usarán border-box automáticamente.
+
+En CSS, el selector * es un selector universal que selecciona todos los elementos del documento.
+
+Los selectores *::before y *::after se refieren a los pseudoelementos ::before y ::after de 
+todos los elementos de la página.
+
+💡 ¿Por qué hacer esto?
+
+- Evita problemas de diseño con márgenes y padding.
+- Facilita el desarrollo: no tienes que preocuparte de que los elementos se agranden inesperadamente.
+- Es un buen "reset" CSS para que el tamaño de los elementos sea más predecible.
