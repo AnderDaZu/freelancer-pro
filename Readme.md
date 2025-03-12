@@ -173,3 +173,114 @@ los estilos sean más fáciles de gestionar".
 
     Usamos :root principalmente para definir variables CSS reutilizables en todo el documento y 
     garantizar que tengan una mayor prioridad que los estilos aplicados a html.
+
+---
+
+# Normalize
+
+Normalize.css se usa en los proyectos para:
+
+✅ Eliminar inconsistencias en los estilos predeterminados de los navegadores.
+✅ Hacer que los estilos sean más uniformes en distintos navegadores y dispositivos.
+✅ Mantener compatibilidad sin eliminar por completo los estilos nativos útiles.
+
+💡 En resumen: Ayuda a que tu sitio web se vea y funcione de manera más consistente en todos los navegadores. 🚀
+
+# Formas de Escribir Código CSS
+
+## BEM (Bloques Elementos Modificadores)
+
+Es una metodología para escribir código CSS más organizado, escalable y fácil de mantener.
+
+📌 ¿Cómo funciona?
+
+BEM divide los nombres de clases en tres partes:
+
+1️⃣ Bloque (Block) → Representa un componente independiente. `.boton { ... }`
+
+2️⃣ Elemento (Element) → Parte del bloque que no tiene sentido por sí solo. `.boton__icono { ... }`
+
+3️⃣ Modificador (Modifier) → Variación del bloque o elemento. `.boton--grande { ... }`
+
+🚀 Ventajas de BEM
+
+- ✅ Código más claro y estructurado
+- ✅ Evita conflictos en los estilos
+- ✅ Facilita el mantenimiento y escalabilidad
+
+💡Resumen: BEM ayuda a escribir CSS más organizado usando nombres de clases con una 
+estructura clara (bloque__elemento--modificador).
+
+## Utility First
+
+Utility-First es una metodología en CSS donde se usan clases pequeñas y reutilizables (utilities) para 
+diseñar interfaces sin necesidad de escribir CSS personalizado.
+
+📌 ¿Para qué sirve?
+
+- ✅ Rápida maquetación sin escribir CSS adicional.
+- ✅ Código más limpio y reutilizable.
+- ✅ Evita la sobrecarga de estilos personalizados.
+
+🔥 Ejemplo con Tailwind CSS (Utility-First Framework)
+
+```html
+<button class="bg-blue-500 text-white px-4 py-2 rounded">Botón</button>
+```
+
+🎯 Aquí usamos clases como bg-blue-500 (fondo azul), text-white (texto blanco), 
+px-4 (padding horizontal), etc. en lugar de escribir CSS tradicional.
+
+💡 Ideal para proyectos rápidos y escalables
+
+---
+
+# Medidas de Media Queries
+
+| Dispositivo |	Tamaño (px) | Media Queries |
+|:------------|:-----------:|:-------------:|
+| 📱 Móvil pequeño | 320px - 480px | @media (max-width: 480px) { ... } |
+| 📱 Móvil mediano | 481px - 767px | @media (max-width: 767px) { ... } |
+| 📱 Móvil grande / Tablet pequeña | 768px - 1024px | @media (max-width: 1024px) { ... } |
+| 💻 Tablets y pantallas medianas | 1025px - 1280px | @media (max-width: 1280px) { ... } |
+| 🖥️ Escritorio estándar | 1281px - 1600px | @media (max-width: 1600px) { ... } |
+| 🖥️ Pantallas grandes | 1601px o más | @media (min-width: 1601px) { ... } |
+
+---
+
+# Snipet para Ajustar Módelo Caja (Box Model)
+
+Este código se usa para controlar cómo se calculan los tamaños de los elementos en una página web. 
+Vamos a desglosarlo en partes:
+
+```css
+html {
+    box-sizing: border-box;
+}
+```
+
+👉 Aquí se establece que el elemento <html> (todo el documento) usará box-sizing: border-box;.
+
+🔍 ¿Qué significa esto?
+Cuando un elemento tiene box-sizing: border-box, su ancho y alto incluyen el padding y el borde.
+
+```css
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+```
+
+👉 Esto significa que todos los elementos y sus pseudoelementos (::before, ::after) heredarán la propiedad box-sizing del <html>.
+
+Como en <html> ya se definió box-sizing: border-box;, todos los elementos de la página usarán border-box automáticamente.
+
+En CSS, el selector * es un selector universal que selecciona todos los elementos del documento.
+
+Los selectores *::before y *::after se refieren a los pseudoelementos ::before y ::after de 
+todos los elementos de la página.
+
+💡 ¿Por qué hacer esto?
+
+- Evita problemas de diseño con márgenes y padding.
+- Facilita el desarrollo: no tienes que preocuparte de que los elementos se agranden inesperadamente.
+- Es un buen "reset" CSS para que el tamaño de los elementos sea más predecible.

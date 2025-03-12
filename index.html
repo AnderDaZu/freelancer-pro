@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freelancer Anderson</title>
 
+    <link rel="preload" href="./css/normalize.css" as="style">
+    <link rel="stylesheet" href="./css/normalize.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
@@ -19,27 +22,49 @@
         <h1 class="titulo">Anderson Dazu <span>Freelancer</span></h1>
     </header>
 
-    <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Sobre Mi</a>
-        <a href="#">Clientes</a>
-        <a href="#">Contacto</a>
-    </nav>
+    <div class="nav-bg">
+        <button class="nav__btn_display">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 3h16" />
+                <path d="M4 9h16" />
+                <path d="M4 15h16" />
+                <path d="M4 21h16" />
+            </svg>
+        </button>
 
-    <img src="./img/hero.jpg" alt="imagen portada">
+        <button class="nav__btn_close inactive">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="1.5">
+                <path d="M18 6l-12 12"></path>
+                <path d="M6 6l12 12"></path>
+            </svg>
+        </button>
 
-    <section>
-        <h2>Diseño y Desarrollo Web Freelancer</h2>
+        <nav class="navegacion-principal contenedor inactive">
+            <a href="#">Inicio</a>
+            <a href="#">Sobre Mi</a>
+            <a href="#">Clientes</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </div>
 
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffc107" stroke-linecap="round"
-            stroke-linejoin="round" width="88" height="88" stroke-width="1.5">
-            <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
-            <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"></path>
-        </svg>
-
-        <p>Aguazul, Colombia</p>
-
-        <a href="#">Contactar</a>
+    <section class="hero">
+        <div class="contenido-hero">
+            <h2>Diseño y Desarrollo Web Freelancer</h2>
+    
+            <div class="ubicacion">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffc107" stroke-linecap="round"
+                    stroke-linejoin="round" width="88" height="88" stroke-width="1.5">
+                    <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+                    <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"></path>
+                </svg>
+        
+                <p>Aguazul, Colombia</p>
+            </div>
+    
+            <a href="#" class="boton">Contactar</a>
+        </div>
     </section>
 
     <main>
@@ -128,7 +153,7 @@
                 </div>
 
                 <div>
-                    <input type="submit" value="Enviar">
+                    <input type="submit" value="Enviar" class="boton">
                 </div>
             </fieldset>
         </form>
@@ -137,6 +162,28 @@
     <Footer>
         <p>Todos los derechos reservados, Anderson Dazu Freelancer 2025</p>
     </Footer>
+
+    <script>
+        const nav = document.querySelector(".navegacion-principal");
+        const navBtn = document.querySelector(".nav__btn_display");
+        const navClose = document.querySelector(".nav__btn_close");
+
+        navBtn.addEventListener("click", () => {
+            navBtn.classList.remove("active__block");
+            navBtn.classList.add("inactive");
+            navClose.classList.remove("inactive");
+            navClose.classList.add("active__block");
+            nav.classList.add("active__flex");
+        });
+
+        navClose.addEventListener("click", () => {
+            navClose.classList.remove("active__block");
+            navClose.classList.add("inactive");
+            navBtn.classList.remove("inactive");
+            navBtn.classList.add("active__block");
+            nav.classList.remove("active__flex");
+        });
+    </script>
 </body>
 
 </html>
